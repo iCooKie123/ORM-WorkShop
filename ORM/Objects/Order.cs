@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ORM
+﻿namespace ORM
 {
     public class Order
     {
@@ -13,5 +7,8 @@ namespace ORM
         public DateTime? Created { get; set; }
 
         public ICollection<OrderItem> Items { get; set; }
+
+        public Customer Customer { get; set; }
+
     }
 }

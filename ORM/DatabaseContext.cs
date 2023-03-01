@@ -1,9 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using ORM.Objects;
 
 namespace ORM
 {
@@ -14,9 +10,14 @@ namespace ORM
         public DbSet<OrderItem> OrderItems { get; set; }
 
         public DbSet<Order> Orders { get; set; }
+
+        public DbSet<Customer> Customers { get; set; }
+
+        public DbSet<Association> Associations { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=DESKTOP-F4RJK64; Database=ORM;User=sa;Password=cegeka123; TrustServerCertificate=True");
+            optionsBuilder.UseSqlServer("Data Source=NexusLite-PC\\SQLEXPRESS;Database=ORM;Integrated Security=sspi; TrustServerCertificate=True;MultipleActiveResultSets=True");
         }
     }
 }
